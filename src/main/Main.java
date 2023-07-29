@@ -69,30 +69,6 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-//		Rectangle r1 = new Rectangle(100, 100, Color.RED);
-////		Scale scaler = new Scale(2, 3);
-////		r1.getTransforms().add(scaler);
-////		Translate translate = new Translate(70, 70);
-////		Rotate rotate = new Rotate(45, 50, 50);
-////		r1.getTransforms().add(rotate);
-//		
-//		TranslateTransition translate = new TranslateTransition(Duration.seconds(.75), r1);
-////		translate.setCycleCount(Animation.INDEFINITE);
-//		translate.setByX(100);
-//		translate.setByY(-200);
-//		
-//		RotateTransition rotate = new RotateTransition(Duration.seconds(1.5), r1);
-////		rotate.setAutoReverse(true);
-////		rotate.setCycleCount(Animation.INDEFINITE);
-//		rotate.setByAngle(720);
-////		rotate.play();
-//		
-//		ParallelTransition pt = new ParallelTransition(translate, rotate);
-//		pt.setCycleCount(Animation.INDEFINITE);
-//		pt.setAutoReverse(true);
-//		pt.setInterpolator(Interpolator.EASE_BOTH);
-//		pt.play();
-		
 		Media video = new Media(getClass().getResource("/videos/video.mp4").toExternalForm());
 		MediaPlayer vidPlayer = new MediaPlayer(video);
 		MediaView vidViewer = new MediaView(vidPlayer);
@@ -179,7 +155,6 @@ public class Main extends Application {
 		});
 		
 		songProg.valueProperty().addListener((obs, oldVal, newVal) -> {
-//			System.out.println(obs.getValue() + " " + oldVal + " " + newVal);
 			if(!isUpdate)
 				musicPlayer.seek(Duration.seconds((double)obs.getValue() * musicPlayer.getMedia().getDuration().toSeconds()));
 		});
@@ -188,6 +163,6 @@ public class Main extends Application {
 			songPlaylist.nextSong();
 			refreshPlayer();
 		});
-//		musicPlayer.play();
+		musicPlayer.play();
 	}
 }
