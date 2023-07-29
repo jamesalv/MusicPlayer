@@ -69,9 +69,9 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		
-		Media video = new Media(getClass().getResource("/videos/video.mp4").toExternalForm());
-		MediaPlayer vidPlayer = new MediaPlayer(video);
-		MediaView vidViewer = new MediaView(vidPlayer);
+//		Media video = new Media(getClass().getResource("/videos/video.mp4").toExternalForm());
+//		MediaPlayer vidPlayer = new MediaPlayer(video);
+//		MediaView vidViewer = new MediaView(vidPlayer);
 		
 		songProg.setMinWidth(viewWidth - 60);
 		songTitle.setFont(Font.font("", FontWeight.BOLD, 24));
@@ -89,7 +89,7 @@ public class Main extends Application {
 		botPart.setMaxWidth(viewWidth);
 		botPart.setSpacing(15);
 		
-		root.setTop(vidViewer);
+//		root.setTop(vidViewer);
 		root.setCenter(coverImg);
 		root.setBottom(botPart);
 		BorderPane.setAlignment(botPart, Pos.CENTER);
